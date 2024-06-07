@@ -1,11 +1,20 @@
 <?php
 
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/contact', function () {
+    return view('contact');
+});
+
+// Routes for Product
+Route::get('/product/create',[ProductController::class],'create');
+Route::get('/product/show',[ProductController::class],'show');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
